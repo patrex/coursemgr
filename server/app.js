@@ -1,19 +1,25 @@
 import express from 'express';
-import path from 'path';
-import homeRoute from './routes/index';
+//import path from 'path';
+import homeRoute from './routes/index.route';
+import studentRoute from './routes/students.route';
 
-const app = express();
+import swaggerUI from 'swagger-ui-express';
+import swagDoc from '../config/swaggerDoc.json';
+
+
+let app = express();
 
 //set view engine
-app.set('views', path.join(__dirname, '../views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, '../views'));
+// app.set('view engine', 'pug');
 
 //json and bodyparsing
-app.use(express.json());
-app.use(express.static(path.join(__dirname, 'puplic')));
+//app.use(express.json());
+//app.use(express.static(path.join(__dirname, 'puplic')));
 
-app.use('/', homeRoute);
-app.use('/students', require('./controllers/students.ctrl.getAll'));
+app.use('/home', homeRoute);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swagDoc, {explorer:true}));
+app.use('/students', studentRoute);
 
 //in the wild
 app.get('*', (req, res) => {
