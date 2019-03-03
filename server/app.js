@@ -18,8 +18,9 @@ let app = express();
 //app.use(express.static(path.join(__dirname, 'puplic')));
 
 app.use('/home', homeRoute);
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swagDoc, {explorer:true}));
 app.use('/students', studentRoute);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swagDoc, {explorer:true}));
+
 
 //in the wild
 app.get('*', (req, res) => {
