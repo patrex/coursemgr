@@ -12,7 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
