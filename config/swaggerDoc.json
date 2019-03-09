@@ -1,4 +1,47 @@
 {
-    "title": "Students",
-    "description": "Students"
+    "openapi": "3.0.3",
+    "version": "1.0.0",
+    "title": "Students API",
+    "description": "This API provides services that a typical student information system can consume",
+    "termOfService": "https://uncle.bro/terms",
+    "contact": {
+        "name": "Patsoks",
+        "url": "patsoks.com",
+        "email": "patsoks.sokari@gmail.com"
+    },
+    "license": {
+        "name": "Students License",
+        "url":"patsoks.com"
+    },
+    "servers": {
+        "url":"patsoks.com"
+    },
+    "paths": {
+        "/students":{
+            "get":{
+                "description": "Returns a list of student objects",
+                "responses":{
+                    "200":{
+                        "description": "Successful op",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type": "array",
+                                    "items":{
+                                        "propertes":{
+                                            "id": {
+                                                "type": "integer",
+                                                "example": "4"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
 }

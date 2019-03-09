@@ -3,7 +3,7 @@ exports.getAll = (req, res) => {
 }
 
 exports.getOne = (req, res) => {
-    res.send(req.params.id);
+    res.send("Student: " + req.params.id);
 }
 
 exports.create = (req, res) => {

@@ -24,7 +24,7 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swagDoc, {explorer:true}))
 
 //in the wild
 app.get('*', (req, res) => {
-    res.status(400).send('You are in the wild');
+    res.status(404).send('You are in the wild');
 })
 
 module.exports = app;
