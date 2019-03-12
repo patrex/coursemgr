@@ -1,5 +1,5 @@
 import express from 'express';
-//import path from 'path';
+import path from 'path';
 import homeRoute from './routes/index.route';
 import studentRoute from './routes/students.route';
 

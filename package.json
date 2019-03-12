@@ -12,11 +12,13 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "config": "^3.0.1"
   }
 }

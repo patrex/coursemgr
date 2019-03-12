@@ -1,20 +1,23 @@
 {
     "openapi": "3.0.3",
-    "version": "1.0.0",
-    "title": "Students API",
-    "description": "This API provides services that a typical student information system can consume",
-    "termOfService": "https://uncle.bro/terms",
-    "contact": {
-        "name": "Patsoks",
-        "url": "patsoks.com",
-        "email": "patsoks.sokari@gmail.com"
+    "info": {
+        "version": "1.0.0",
+        "title": "Students API",
+        "description": "This API provides services that a typical student information system can consume",
+        "termOfService": "https://uncle.bro/terms",
+        "contact": {
+            "name": "Patsoks",
+            "url": "patsoks.com",
+            "email": "patsoks.sokari@gmail.com"
+        },
+        "license": {
+            "name": "Students License",
+            "url":"patsoks.com"
+        }
     },
-    "license": {
-        "name": "Students License",
-        "url":"patsoks.com"
-    },
-    "servers": {
-        "url":"patsoks.com"
+    "server": {
+        "url":"http://localhost:5000/",
+        "description": "server loation"
     },
     "paths": {
         "/students":{
@@ -22,16 +25,25 @@
                 "description": "Returns a list of student objects",
                 "responses":{
                     "200":{
-                        "description": "Successful op",
+                        "description": "Successful fetch of student data",
                         "content":{
                             "application/json":{
                                 "schema":{
                                     "type": "array",
                                     "items":{
-                                        "propertes":{
+                                        "properties":{
                                             "id": {
                                                 "type": "integer",
+                                                "format": "int32",
                                                 "example": "4"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Mike Pence"
+                                            },
+                                            "studID":{
+                                                "type": "string",
+                                                "example": "DE.1990/1000"
                                             }
                                         }
                                     }

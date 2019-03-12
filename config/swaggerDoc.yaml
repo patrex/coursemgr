@@ -1,0 +1,41 @@
+openapi: '3.0.3'
+
+info:
+  version: '1.0.0'
+  title: 'Students API'
+  description: 'Services that a typical student client can consume'
+  termsOfService: 'https://uncle.bob.terms'
+  contact:
+    name: 'Patsoks Kanetkar'
+    url: 'https://patsoks.kanetkar.me'
+    email: 'patsoks.kanetkar@knet.com'
+  license:
+    name: 'Students License'
+    url: 'http://license.kanetkar.com'
+  server: 
+    url: 'http://localhost:5000'
+    description: 'Local root server'
+
+paths:
+  //students:
+    get:
+      description: 'Returns a list of students'
+      responses:
+        200:
+          description: 'A successful fetch of student list'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                      format: int32
+                      example: 4
+                    name:
+                      type: string
+                      example: 'Paul Jenkins'
+                    matNum:
+                      type: string
+                      example: 'DE.1900/0001'

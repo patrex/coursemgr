@@ -34,12 +34,12 @@ var app = (0, _express2.default)();
 //app.use(express.static(path.join(__dirname, 'puplic')));
 
 app.use('/home', _index2.default);
-app.use('/api-docs', _swaggerUiExpress2.default.serve, _swaggerUiExpress2.default.setup(_swaggerDoc2.default, { explorer: true }));
 app.use('/students', _students2.default);
+app.use('/api-docs', _swaggerUiExpress2.default.serve, _swaggerUiExpress2.default.setup(_swaggerDoc2.default, { explorer: true }));
 
 //in the wild
 app.get('*', function (req, res) {
-    res.status(400).send('You are in the wild');
+    res.status(404).send('You are in the wild');
 });
 
 module.exports = app;

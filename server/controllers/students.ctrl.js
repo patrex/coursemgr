@@ -1,3 +1,6 @@
+import jwt from 'jsonwebtoken';
+import users from '../res/user.objects';
+
 exports.getAll = (req, res) => {
     res.send('Hello, student');
 }
